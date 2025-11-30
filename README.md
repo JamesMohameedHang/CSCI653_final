@@ -10,9 +10,10 @@ Among the physical models, Next-Nearest Neighbor Spin Chain is one of the most p
 # Model and Hamiltonian
 For a spin chain, we'd use Spin operators for our study. The Hamiltonian is<br> 
 
-<img width="240" alt="image" src="images/Hamiltonian.png"><br>
+<img width="600" height="200" alt="image" src="images/Hamiltonian.png"><br>
 
-The schematic represents its interactions is
+The schematic represents its interactions is <br>
+<img width="600" height="200" alt="image" src="images/J1J2.png"><br>
 
 # Method
 In this project, I'll be most interested in the Entanglement Entropy of the ground state. By probing the Entanglement Entropy, I'd like to construct a phase diagram of the model, and obtain an understanding of the property of each phase.
@@ -26,6 +27,10 @@ Density Matrix Renormalization Group is a powerful algorithm in studying a relat
 
 However, through certain mathematical renormalization strategy, DMRG allows us to reduce the solution space we need to calculate, and calculate our most interested state(usually ground state) efficiently and precisely
 
-### It's like a brilliant editor for a quantum story, cutting out the fluff and keeping only the essential plot. ###
+### It's like a brilliant editor for a quantum story, cutting out the fluff and keeping only the essential plot. ###<br> 
+
+<img width="600" height="200" alt="image" src="images/DMRG.png"><br>
+
+<img width="600" height="200" alt="image" src="images/DMRG2.png"><br>
 
 
