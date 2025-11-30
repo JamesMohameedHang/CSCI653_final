@@ -1,5 +1,5 @@
 # Topological Insulator
-Topological Insulators are a remarkable class of quantum material that bahave as ##insulators in their inside## while ##conducting in their outside##. In this way, we could greatly reduce the dissipation in current transportation. So far, physicists have proposed numerous physical and mathematical models in simulating the topological insulator.
+Topological Insulators are a remarkable class of quantum material that bahave as **insulators in their inside** while **conducting in their outside**. In this way, we could greatly reduce the dissipation in current transportation. So far, physicists have proposed numerous physical and mathematical models in simulating the topological insulator.
 
 # Next-Nearest-Neighbor Spin Chain
 Among the physical models, Next-Nearest Neighbor Spin Chain is one of the most popular ones. The major reason is that 
@@ -8,8 +8,10 @@ Among the physical models, Next-Nearest Neighbor Spin Chain is one of the most p
 3. It could serve as paradigm of wide range of materials
 
 # Model and Hamiltonian
-For a spin chain, we'd use Spin operators for our study. The Hamiltonian is 
-<img width="240" alt="image" src="images/Hamiltonian.png">
+For a spin chain, we'd use Spin operators for our study. The Hamiltonian is<br> 
+
+<img width="240" alt="image" src="images/Hamiltonian.png"><br>
+
 The schematic represents its interactions is
 
 # Method
@@ -24,6 +26,6 @@ Density Matrix Renormalization Group is a powerful algorithm in studying a relat
 
 However, through certain mathematical renormalization strategy, DMRG allows us to reduce the solution space we need to calculate, and calculate our most interested state(usually ground state) efficiently and precisely
 
-## It's like a brilliant editor for a quantum story, cutting out the fluff and keeping only the essential plot. ##
+### It's like a brilliant editor for a quantum story, cutting out the fluff and keeping only the essential plot. ###
 
 
