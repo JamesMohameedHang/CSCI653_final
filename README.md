@@ -1,5 +1,6 @@
 # Topological Insulator
-Topological Insulators are a remarkable class of quantum material that bahave as **insulators in their inside** while **conducting in their outside**. In this way, we could greatly reduce the dissipation in current transportation. So far, physicists have proposed numerous physical and mathematical models in simulating the topological insulator.
+Topological Insulators are a remarkable class of quantum material that bahave as **insulators in their inside** while **conducting in their outside**. In this way, we could greatly reduce the dissipation in current transportation. So far, physicists have proposed numerous physical and mathematical models in simulating the topological insulator.<br>
+<img width="600" height="200" alt="image" src="images/TP.png"><br>
 
 # Next-Nearest-Neighbor Spin Chain
 Among the physical models, Next-Nearest Neighbor Spin Chain is one of the most popular ones. The major reason is that 
