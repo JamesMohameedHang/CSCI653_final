@@ -3,35 +3,36 @@ import math
 import tenpy
 from tenpy.networks.mps import MPS
 import time
-from tenpy.models.xxz_chain import XXZChain
-from scipy.optimize import curve_fit
+from tenpy.models.spins_nnn import SpinChainNNN2
 from tenpy.algorithms import dmrg
 
-deltas = np.arange(-1.0,1.5,0.05)
+deltas = np.arange(0.95,1.5,0.05)
 #deltas1=np.arange(-1.00,-0.60,0.05)
 #deltas2=np.arange(0.65,1.05,0.05)
 #deltas=np.arange(-1.0,1.05,0.05)
-delta=0.342
-Del=4.0
+delta = 0.30
 Ls=np.arange(50,530,20)
-L = 50
+L = 150
 J = 1.0
 Jz = 0.0
-f=open("edge_mode/ssh_interaction_strong_Jz_4_L_50_Sz_haldane.txt","w")
+f=open("J1_J2_interaction_strong_Jz_0_L_"+str(L)+"_del_varying.txt","w")
 for delta in deltas:
 	N=L*2
 	J2 = J+delta
 	model_params = {
             'L': N,
-            'Jxx': J,
+            'Jx': J,
+            'Jy':J,
+            'Jxp':J2,
+            'Jyp':J2,
             'Jz':Jz,
+            'Jzp':Jz*J2,
             'hz':0,  # just free fermions, but you can generalize...
             'bc_MPS':'finite'
 	   }
-	M = XXZChain(model_params)
+	M = SpinChainNNN2(model_params)
 	product_state = ['up', 'down']*(L)
 	psi = MPS.from_product_state(M.lat.mps_sites(), product_state, bc=M.lat.bc_MPS)
-	chi_max=int(0.4*N)
 	dmrg_params = {
             'mixer': None,
             #  'mixer_params': {'amplitude': 1.e-3, 'decay': 5., 'disable_after': 50},
@@ -43,8 +44,6 @@ for delta in deltas:
             'max_E_err': 1.e-9,
             'combine': True
         }
-	M.add_coupling(J2 * 0.5, 0, 'Sp', 0, 'Sm', 2, plus_hc=True)
-	M.add_coupling(J2*Jz * 0.5, 0, 'Sz', 0, 'Sz', 2)
     #chi_list = np.arange(7, 31, 2)
 	s_list = []
 	E_list=[]
@@ -59,7 +58,6 @@ for delta in deltas:
         ##   Calculating bond entropy and correlation length  ##
 	s=psi.entanglement_entropy()[L-1]
 	s2=psi.entanglement_entropy()[L]
-	print("even")
 	corr_func=psi.correlation_function("Sz","Sz")[0][L]
          # the bond 0 is between MPS unit cells and hence sensible even for 2D lattices.
         #xi_list.append(psi.correlation_length())
@@ -80,5 +78,5 @@ for delta in deltas:
 	#f.write(str(int(L))+"       "+str(expec)+"\n")
 	print("SETTING NEW BOND DIMENSION")
 	# f.write(str(int(L))+"       "+str(expec)+str(delta)+"\n")
-	f.write(str(int(L))+"       "+str(s)+"      "+str(s2)+"      "+str(E_list[-1])+"     "+str(E)+"       "+str(delta)+"\n")
+	f.write(str(int(L))+"       "+str(s)+"      "+str(s2)+"      "+str(corr_func)+"     "+str(E)+"       "+str(delta)+"\n")
 f.close()

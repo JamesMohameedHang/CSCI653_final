@@ -52,7 +52,7 @@ The sweep of S with respect to parameter space, where (a)sweep through δ with J
 
 Concluded from what we get, I've roughly sketched the phase diagram of this model, shown in the following image<br> 
 
-<img width="600" height="200" alt="image" src="images/J1J2_phase.png"><br>
+<img width="800" height="800" alt="image" src="images/J1J2_phase.png"><br>
 
 
 
